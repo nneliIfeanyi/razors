@@ -8,6 +8,6 @@
   // App Root
   define('APPROOT', dirname(dirname(__FILE__)));
   // URL Root
-  define('URLROOT', 'http://localhost/murada');
+  define('URLROOT', 'http://localhost/emarket');
   // Site Name
   define('SITENAME', 'sitename');
