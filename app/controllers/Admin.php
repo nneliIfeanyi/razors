@@ -409,7 +409,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }else{ 
 
     //NOT A POST REQUEST
-     $user =$this->userModel->userLevel();
+     $user =$this->userModel->getUserById($_SESSION['user_id']);
       $data = [
       'user' => $user, 
       ];

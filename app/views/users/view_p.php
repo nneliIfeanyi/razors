@@ -138,7 +138,7 @@
 <p class="fs-6"><i class="fa fa-truck fa-sm"></i> Delivery services available</p>
 </div>
 </div>
-<?php if($data['seller']->level === 'three') :?> 
+
 <div class="row">
 <div class="col d-grid">
 <a href="https://wa.me/9097804049?text=I%20am%20interested%20in%20buying%20this%20<?=URLROOT.'/'.'users'.'/'.'view_p'.'/'.$data['product']->id?>" class="btn btn-success btn-block"><i class="fa fa-whatsapp fa-fw"></i>Whatsapp</a>
@@ -147,17 +147,8 @@
 <a href="tel:09097804049" class="btn btn-outline-success btn-block"><i class="fa fa-phone fa-fw"></i>Call Now</a>
 </div>
 </div>
-<?php else :?>
-<div class="row">
-<div class="col d-grid">
-<a href="" class="btn btn-success btn-block">Whatsapp</a>
 </div>
-<div class="col d-grid">
-<a href="" class="btn btn-outline-success btn-block">Call Now</a>
-</div>
-</div>
-</div>
-<?php endif ;?>
+
 </div>
 </div>
 <div class="mt-3">
