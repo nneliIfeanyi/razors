@@ -51,9 +51,6 @@ public function chargers(){
     }
 
 
-
-
-
     public function power(){
       $products = $this->accessoriesModel->powers();
            if (!empty($products)) {
@@ -93,6 +90,7 @@ public function chargers(){
      
        $this->view('accessories/bluetooth', $data); 
     }
+
 
 
     

@@ -111,6 +111,14 @@ class Product {
         }
       }
 
+    // Get All Products
+    public function getProduct(){
+        $this->db->query("SELECT * FROM products WHERE s_id = '2' ORDER BY id DESC");
+  
+        $results = $this->db->resultset();
+  
+        return $results;
+      }
 
  // Get per user Products
     public function getUserProduct(){
@@ -132,7 +140,6 @@ class Product {
 
       return $row;
     }
-
 
 
     }

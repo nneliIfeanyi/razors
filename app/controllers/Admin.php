@@ -15,11 +15,10 @@ class Admin extends Controller {
    //======================
 
    public function index(){
-      //$access = $this->userModel->userLevel();
-      //$products = $this->productModel->getProduct();
+      $products = $this->productModel->getProduct();
       $data = [
-
-
+        'title' => 'All Products',
+        'products' => $products
       ];
    
     $this->view('admin/index', $data);
@@ -107,6 +106,7 @@ class Admin extends Controller {
         }
 
     }else{
+       
         $data = [
           'category' => '',
           'condition' => '',
@@ -173,7 +173,6 @@ class Admin extends Controller {
         'descErr' => ''
       ]; 
 
-
       if($this->productModel->add_product2($data)){
       
         flash('success', 'Add Product Successfull');
@@ -181,6 +180,7 @@ class Admin extends Controller {
       } else {
         die('Something went wrong');
       }
+
   }   
 
    //=======IF NOT A POST REQUEST==========//////
@@ -299,12 +299,16 @@ class Admin extends Controller {
        }else {
         // Get post from model
         $products = $this->productModel->getById($id);
+        $access = $this->userModel->userLevel();
+
         // Check for owner
         if($products->s_id != $_SESSION['user_id']){
           redirect('admin/show');
         }
        $data = [
           'product' => $products,
+          'access' => $access,
+           
           ]; 
 
         $this->view('admin/edit', $data);
@@ -405,7 +409,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }else{ 
 
     //NOT A POST REQUEST
-     $user =$this->userModel->getUserById($_SESSION['user_id']);
+     $user =$this->userModel->userLevel();
       $data = [
       'user' => $user, 
       ];

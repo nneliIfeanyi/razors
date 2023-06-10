@@ -70,26 +70,5 @@
     }
 
 
-
-     //====SECOND HAND PAGE VIEW DISPLAY
-   public function others(){
-    $products = $this->phoneModel->button();
-    if (!empty($products)) {
-      $data = [
-            'title' => 'Button Phones',
-            'products' => $products
-          ];
-    }else{
-       flash('success', 'No results found');
-      $data = [
-            'title' => 'Button Phones',
-            'products' => $products
-          ];
-    }
-     
-      $this->view('phones/others', $data);
-    }
-
-
     
   }

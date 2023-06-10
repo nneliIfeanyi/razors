@@ -1,4 +1,4 @@
-<?php require APPROOT . '/views/inc/header.php'; ?>
+<?php require APPROOT . '/views/inc/header.php';  ?>
         <div class="container pt-3">
         <div class="row">
         <?php include APPROOT . '/views/admin/inc.php' ?>
@@ -7,15 +7,14 @@
             <div class="mx-auto mt-2 container text-center"><?php flash('upload_msg'); ?></div>
         <h2 class="text-center mt-2">Add Phone</h2>
         <div class="card card-body bg-light mt-3">
-        <p>Please use the form below to add product for sell</p>
+      <p>Please use the form below to add product for sell</p>
       <form action="<?php echo URLROOT; ?>/admin/add" method="post" enctype="multipart/form-data">
         
-        <div class="form-group">
+        <div class="form-group mb-2">
             <label>Category</label><br>
             <select class="custom-select" name="sub_category">
                 <option value="ios device">iPhone</option>
                 <option value="android device">Android</option>
-            </select>
         </div>
         
         <div class="form-group">
@@ -52,16 +51,16 @@
             <span class="invalid-feedback"><?php echo $data['price_err']; ?></span>
         </div>
 
-        <div class="form-group">
-            <label>Product Pic</label>
+        <div class="form-group mb-2">
+            <label>Product Pic 1</label>
             <input type="file" name="picture" class="form-control form-control-lg" >
         </div>   
-        <div class="form-group">
-            <label>Product Pic</label>
+        <div class="form-group mb-2">
+            <label>Product Pic 2</label>
             <input type="file" name="picture2" class="form-control form-control-lg" >
         </div> 
-        <div class="form-group">
-            <label>Product Pic</label>
+        <div class="form-group mb-2">
+            <label>Product Pic 3</label>
             <input type="file" name="picture3" class="form-control form-control-lg" >
         </div> 
         <div class="form-row text-center">

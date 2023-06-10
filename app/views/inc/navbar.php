@@ -19,9 +19,6 @@
 <li class="nav-item">
 <a class="nav-link" href="<?=URLROOT?>/phones">Phones</a>
 </li>
-<!--<li class="nav-item">
-<a class="nav-link" href="<?=URLROOT?>/parts">Parts</a>
-</li>-->
 <li class="nav-item">
 <a class="nav-link" href="<?=URLROOT?>/accessories">Accessories</a>
 </li>

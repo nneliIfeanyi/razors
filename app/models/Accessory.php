@@ -9,14 +9,14 @@ class Accessory {
 
 
  public function allAccessories(){
-      $this->db->query("SELECT * FROM products WHERE category = 'accessories'");
+      $this->db->query("SELECT * FROM products WHERE category = 'accessories' AND s_id = '2' ");
         $results = $this->db->resultset();
   
         return $results;
     }
 
      public function charger(){
-      $this->db->query("SELECT * FROM products WHERE sub_cate = 'charger' ");
+      $this->db->query("SELECT * FROM products WHERE sub_cate = 'charger' AND s_id = '2' ");
         $results = $this->db->resultset();
   
         return $results;
@@ -24,15 +24,14 @@ class Accessory {
 
 
      public function powers(){
-      $this->db->query("SELECT * FROM products WHERE sub_cate = 'power bank' ");
+      $this->db->query("SELECT * FROM products WHERE sub_cate = 'power bank' AND s_id = '2' ");
         $results = $this->db->resultset();
   
         return $results;
     }
 
-
      public function bluetooth(){
-      $this->db->query("SELECT * FROM products WHERE sub_cate = 'bluetooth device' ");
+      $this->db->query("SELECT * FROM products WHERE sub_cate = 'bluetooth device' AND s_id = '2' ");
         $results = $this->db->resultset();
   
         return $results;

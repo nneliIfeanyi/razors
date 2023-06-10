@@ -7,7 +7,7 @@ class User{
       $this->db = new Database;
     }
 
-      
+    
     // Find USer BY phone
     public function findUserByPhone($phone){
         $this->db->query("SELECT * FROM users WHERE phone = :phone");
@@ -116,6 +116,7 @@ class User{
       }
     }
 
+
           // Login / Authenticate User
     public function login($phone, $password){
         $this->db->query("SELECT * FROM users WHERE phone = :phone");
@@ -142,6 +143,7 @@ class User{
 
       return $row;
     }
+
  
           // Find User By ID
     public function getUserById($id){
@@ -162,7 +164,6 @@ class User{
 
       return $row;
     }
-
 
     
 }

@@ -17,7 +17,7 @@
         </div>
           <div class="form-row">
             <div class="col-6 mb-2">
-              <input type="submit" class="btn btn-success btn-block" value="Update">
+              <input type="submit" class="btn btn-success btn-block" value="Login">
             </div>
               <div class="col-12 mb-2">
              <a href="<?php echo URLROOT; ?>/admin/setting" class="btn btn-block">Go Back</a>
