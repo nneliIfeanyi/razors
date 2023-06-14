@@ -130,6 +130,89 @@ class Admin extends Controller {
 //===============================
 
 
+public function add3(){
+     $uploadPath = "uploaded/";
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      $_POST = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+      $fileName = basename($_FILES["picture"]["name"]);
+      $fileName2 = basename($_FILES["picture2"]["name"]);
+      $fileName3 = basename($_FILES["picture3"]["name"]);
+      $db_image_file =  $uploadPath . $fileName; 
+      $db_image_file2 =  $uploadPath . $fileName2; 
+      $db_image_file3 =  $uploadPath . $fileName3;  
+      $imageUploadPath = $uploadPath . $fileName; 
+      $imageUploadPath2 = $uploadPath . $fileName2;
+      $imageUploadPath3 = $uploadPath . $fileName3;
+      $fileType = pathinfo($imageUploadPath, PATHINFO_EXTENSION);
+      $fileType2 = pathinfo($imageUploadPath2, PATHINFO_EXTENSION);
+      $fileType3 = pathinfo($imageUploadPath3, PATHINFO_EXTENSION);  
+         
+      // Allow certain file formats 
+      $allowTypes = array('jpg','png','jpeg'); 
+      if(!in_array($fileType, $allowTypes) || !in_array($fileType2, $allowTypes) || !in_array($fileType3, $allowTypes)){ 
+        
+         flash('msg', 'INVALID IMAGE TYPE');
+         redirect('admin/add3');
+         
+          
+      }else{ 
+          $imageTemp = $_FILES["picture"]["tmp_name"];
+          $imageTemp2 = $_FILES["picture2"]["tmp_name"];
+          $imageTemp3 = $_FILES["picture3"]["tmp_name"]; 
+           
+          // Compress size and upload image 
+          compressImage($imageTemp, $imageUploadPath, 9);
+          compressImage($imageTemp2, $imageUploadPath2, 9);
+          compressImage($imageTemp3, $imageUploadPath3, 9); 
+
+          $data = [
+            'user_id' => $_SESSION['user_id'],
+            'user_name' => $_SESSION['user_name'],
+            'category' => 'laptop',
+            'sub_cate' => 'laptop',
+            'condition' => $_POST['condition'],
+            'brand' => $_POST['brand'],
+            'image' => $db_image_file,
+            'image2' => $db_image_file2,
+            'image3' => $db_image_file3,
+            'description' => trim($_POST['description']),
+            'model' => trim($_POST['model']),
+            'price' => trim($_POST['price']),
+            'color' => trim($_POST['color'])
+          ];
+
+          if($this->productModel->add_product($data)){
+            flash('success', 'Add Product Successfull');
+            redirect('admin/show');
+          } else {
+            die('Something went wrong');
+          } 
+            
+        }
+
+    }else{
+       
+        $data = [
+          'category' => '',
+          'condition' => '',
+          'model' => '',
+          'color' => '',
+          'description' => '',
+          'price' => '',
+          'brand' => '',
+          'priceErr' => '',
+          'nameErr' => '',
+          'descErr' => '',
+          'imgErr' => ''
+
+          
+        ]; 
+
+        //Load View
+        $this->view('admin/add3', $data);
+        }
+    }
+
     //========================FOR ACCESSORIES
   public function add2(){
     $uploadPath = "uploaded/";
@@ -299,7 +382,7 @@ class Admin extends Controller {
        }else {
         // Get post from model
         $products = $this->productModel->getById($id);
-        $access = $this->userModel->userLevel();
+        $access = $this->userModel->getUserById($_SESSION['user_id']);
 
         // Check for owner
         if($products->s_id != $_SESSION['user_id']){

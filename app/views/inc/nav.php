@@ -3,17 +3,18 @@
                 <ul class="list-unstyled templatemo-accordion">
                     <li class="pb-2">
                         <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            SmartPhones
+                            Gadgets
                             <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
                         </a>
                         <ul class="collapse show list-unstyled pl-3">
                             <li><a class="text-decoration-none" href="<?=URLROOT?>/phones/iphones">iPhones</a></li>
                             <li><a class="text-decoration-none" href="<?=URLROOT?>/phones/android">Android Phones</a></li>
+                            <li><a class="text-decoration-none" href="<?=URLROOT?>/products/laptops">Laptops</a></li>
                         </ul>
                     </li>
                    <li class="pb-2">
                         <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            Phone Accessories
+                            Accessories
                             <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
                         </a>
                         <ul class="collapse show list-unstyled pl-3">

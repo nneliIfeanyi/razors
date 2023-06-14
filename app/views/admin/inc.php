@@ -11,7 +11,7 @@
                         
                                 <li><a class="text-decoration-none fs-6" href="<?=URLROOT?>/admin/add">Phone</a></li>
                                 <li><a class="text-decoration-none fs-6" href="<?=URLROOT?>/admin/add2">Accessories</a></li>
-                                <!--<li><a class="text-decoration-none fs-6" href="<?=URLROOT?>/admin/add3">Parts</a></li>-->
+                                <li><a class="text-decoration-none fs-6" href="<?=URLROOT?>/admin/add3">Laptop</a></li>
                         </ul>
                     </li>
                     <li class="pb-2">

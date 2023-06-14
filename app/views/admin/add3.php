@@ -5,18 +5,10 @@
         <div class="col-md-9 mb-5 mx-auto">
          <div class="mx-auto mt-2 container text-center"><?php flash('msg'); ?></div>
             <div class="mx-auto mt-2 container text-center"><?php flash('upload_msg'); ?></div>
-        <h2 class="text-center mt-2">Add Phone</h2>
+        <h2 class="text-center mt-2">Add Laptop</h2>
         <div class="card card-body bg-light mt-3">
       <p>Please use the form below to add product for sell</p>
-      <form action="<?php echo URLROOT; ?>/admin/add" method="post" enctype="multipart/form-data">
-        
-        <div class="form-group mb-2">
-            <label>Category</label><br>
-            <select class="custom-select" name="sub_category">
-                <option value="ios device">iPhone</option>
-                <option value="android device">Android</option>
-            </select>
-        </div>
+      <form action="<?php echo URLROOT; ?>/admin/add3" method="post" enctype="multipart/form-data">
         
         <div class="form-group">
             <label>Brand name</label>

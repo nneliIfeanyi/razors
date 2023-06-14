@@ -120,6 +120,16 @@ class Product {
         return $results;
       }
 
+
+    // Get LAPTOPS Products
+    public function getLaptops(){
+        $this->db->query("SELECT * FROM products WHERE category = 'laptop' ORDER BY id DESC");
+  
+        $results = $this->db->resultset();
+  
+        return $results;
+      }
+
  // Get per user Products
     public function getUserProduct(){
         $this->db->query("SELECT * FROM products WHERE s_id = :id ORDER BY id DESC");
