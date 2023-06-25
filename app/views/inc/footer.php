@@ -8,15 +8,15 @@
                     <ul class="list-unstyled text-light footer-link-list">
                         <li>
                             <i class="fa fa-map-marker fa-fw"></i>
-                            New Banex Plaza.
+                            Murada Plaza Suleja, Abuja.
                         </li>
                         <li>
                             <i class="fa fa-phone fa-fw"></i>
-                            <a class="text-decoration-none" href="tel:010-020-0340">+2349097804049</a>
+                            <a class="text-decoration-none" href="tel:08051178834">08051178834</a>
                         </li>
                         <li>
                             <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="mailto:info@company.com">razorsgadget@gmail.com</a>
+                            <a class="text-decoration-none" href="mailto:micvooh153@gmail.com">micvooh153@gmail.com</a>
                         </li>
                     </ul>
                 </div>
