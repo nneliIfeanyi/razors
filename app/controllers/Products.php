@@ -14,7 +14,7 @@ class Products extends Controller{
         $products = $this->productModel->getLaptops();
              if (!empty($products)) {
         $data = [
-              'title' => 'All laptops',
+              'title' => 'Laptops',
               'products' => $products
             ];
       }else{

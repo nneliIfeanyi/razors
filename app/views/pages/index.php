@@ -1,6 +1,33 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
-<div class="container p-2">
-<p class="h5">Welcome to <span class="text-success fw-bold"><?=SITENAME?></span> GSM market</p>
+<style>
+.cssmarquee {
+height: 50px;
+overflow: hidden;
+position: relative;
+}
+.cssmarquee h1 {
+font-size: 1em;
+position: absolute;
+width: 100%;
+height: 100%;
+margin: 0;
+line-height: 50px;
+text-align: center;
+transform:translateX(100%);
+animation: cssmarquee 12s linear infinite;
+}
+@keyframes cssmarquee {
+0% {
+transform: translateX(100%);
+}
+100% {
+transform: translateX(-100%);
+}
+}
+</style>
+ 
+<div class="cssmarquee" style="background: ;">
+<h1 style="text-transform: lowercase;font-style: italic;">WELCOME TO <span class="text-success">De-Matrix Tech</span> hub</h1>
 </div>
 <?php include APPROOT . '/views/inc/showcase.php'; ?>
 
@@ -9,9 +36,16 @@
     <div class="row">
 <?php include APPROOT . '/views/inc/nav.php'; ?>
         <div class="col-lg-9">
-                <div class="mx-auto mt-2 container text-center">
-                    <h4 class="text-success"><?=$data['title']?></h4>
-                    <?php flash('success'); ?>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-inline shop-top-menu pb-3 pt-1">
+                            <li class="list-inline-item">
+                                <h2 class="text-success"><?=$data['title']?></h2>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-2 text-center"><?= flash('success')?></div>
                 </div>
                 <?php include APPROOT . '/views/inc/sample.php'; ?>
            
