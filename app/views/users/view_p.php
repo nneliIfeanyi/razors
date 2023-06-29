@@ -141,10 +141,10 @@
 
 <div class="row">
 <div class="col d-grid">
-<a href="https://wa.me/<?= $data['product']->phone ?>?text=I%20am%20interested%20in%20buying%20this%20<?=URLROOT.'/'.'users'.'/'.'view_p'.'/'.$data['product']->id?>" class="btn btn-success btn-block"><i class="fa fa-whatsapp fa-fw"></i>Whatsapp</a>
+<a href="https://wa.me/<?= $data['seller']->phone ?>?text=I%20am%20interested%20in%20buying%20this%20<?=URLROOT.'/'.'users'.'/'.'view_p'.'/'.$data['product']->id?>" class="btn btn-success btn-block"><i class="fa fa-whatsapp fa-fw"></i>Whatsapp</a>
 </div>
 <div class="col d-grid">
-<a href="tel:0<?= $data['product']->phone ?>" class="btn btn-outline-success btn-block"><i class="fa fa-phone fa-fw"></i>Call Now</a>
+<a href="tel:0<?= $data['seller']->phone ?>" class="btn btn-outline-success btn-block"><i class="fa fa-phone fa-fw"></i>Call Now</a>
 </div>
 </div>
 </div>
